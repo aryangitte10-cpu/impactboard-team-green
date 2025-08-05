@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { BarChart3, Users2, Leaf } from "lucide-react";
-import productImage from "@/assets/product-features.jpg";
 
 const ProductSection = () => {
   const features = [
@@ -10,7 +9,7 @@ const ProductSection = () => {
       description: "Join teams in planting native trees and restoring local ecosystems while building teamwork skills.",
       location: "Berlin, Germany",
       details: "Half day • 12-50 people",
-      image: productImage
+      image: "/lovable-uploads/c4874a9a-aece-4ee3-8454-5fe9f232a843.png"
     },
     {
       icon: Users2,
@@ -18,7 +17,7 @@ const ProductSection = () => {
       description: "Combine marine conservation with team building through beach cleanups and water quality testing.",
       location: "Hamburg, Germany",
       details: "Full day • 8-30 people",
-      image: productImage
+      image: "/lovable-uploads/0ef48b29-7eb4-47d5-9c76-7310b482ebef.png"
     },
     {
       icon: Leaf,
@@ -26,7 +25,7 @@ const ProductSection = () => {
       description: "Create homes for local wildlife while developing problem-solving and collaboration skills.",
       location: "Munich, Germany",
       details: "Half day • 6-25 people",
-      image: productImage
+      image: "/lovable-uploads/90d433ca-77af-44d0-93c5-9b5e795dc027.png"
     }
   ];
 
