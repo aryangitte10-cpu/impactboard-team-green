@@ -40,7 +40,7 @@ const HeroSection = () => {
             <Button 
               variant="hero" 
               size="xl"
-              onClick={() => scrollToSection('audience')}
+              onClick={() => window.open('https://impactboard-next.vercel.app/', '_blank')}
               className="group"
             >
               Get Started
@@ -49,7 +49,7 @@ const HeroSection = () => {
             <Button 
               variant="outline" 
               size="xl"
-              onClick={() => scrollToSection('features')}
+              onClick={() => scrollToSection('storytelling')}
               className="group"
             >
               <Play className="w-5 h-5" />
