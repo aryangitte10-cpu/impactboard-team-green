@@ -7,19 +7,25 @@ const ProductSection = () => {
     {
       icon: BarChart3,
       title: "Forest Restoration Challenge",
-      description: "Join teams in planting native trees and restoring local ecosystems while building teamwork skills.\n\nBerlin, Germany\nHalf day • 12-50 people",
+      description: "Join teams in planting native trees and restoring local ecosystems while building teamwork skills.",
+      location: "Berlin, Germany",
+      details: "Half day • 12-50 people",
       image: productImage
     },
     {
       icon: Users2,
       title: "Ocean Cleanup Expedition",
-      description: "Combine marine conservation with team building through beach cleanups and water quality testing.\n\nHamburg, Germany\nFull day • 8-30 people",
+      description: "Combine marine conservation with team building through beach cleanups and water quality testing.",
+      location: "Hamburg, Germany",
+      details: "Full day • 8-30 people",
       image: productImage
     },
     {
       icon: Leaf,
       title: "Wildlife Habitat Building",
-      description: "Create homes for local wildlife while developing problem-solving and collaboration skills.\n\nMunich, Germany\nHalf day • 6-25 people",
+      description: "Create homes for local wildlife while developing problem-solving and collaboration skills.",
+      location: "Munich, Germany",
+      details: "Half day • 6-25 people",
       image: productImage
     }
   ];
@@ -62,10 +68,18 @@ const ProductSection = () => {
                     {feature.title}
                   </h3>
                 </div>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
+                <p className="text-muted-foreground mb-3 leading-relaxed">
                   {feature.description}
                 </p>
-                <Button variant="outline" className="w-full">
+                <div className="mb-6 text-sm text-muted-foreground">
+                  <div className="font-medium">{feature.location}</div>
+                  <div>{feature.details}</div>
+                </div>
+                <Button 
+                  variant="outline" 
+                  className="w-full"
+                  onClick={() => window.open('https://impactboard-next.vercel.app/', '_blank')}
+                >
                   + Book Activity
                 </Button>
               </div>
