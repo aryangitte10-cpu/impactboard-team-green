@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Leaf } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
+  
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -34,10 +37,10 @@ const Header = () => {
           </Button>
           <Button 
             variant="ghost" 
-            onClick={() => scrollToSection('features')}
+            onClick={() => navigate('/about')}
             className="hover:text-primary"
           >
-            Features
+            About
           </Button>
           <Button 
             variant="ghost" 
