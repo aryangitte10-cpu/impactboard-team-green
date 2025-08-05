@@ -13,7 +13,10 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center gap-2">
+        <div 
+          className="flex items-center gap-2 cursor-pointer" 
+          onClick={() => window.location.reload()}
+        >
           <div className="w-8 h-8 bg-gradient-hero rounded-lg flex items-center justify-center">
             <Leaf className="w-5 h-5 text-primary-foreground" />
           </div>
