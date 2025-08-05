@@ -6,20 +6,20 @@ const ProductSection = () => {
   const features = [
     {
       icon: BarChart3,
-      title: "Impact Tracking",
-      description: "Measure and visualize your team's environmental contributions with detailed analytics and beautiful reports.",
+      title: "Forest Restoration Challenge",
+      description: "Join teams in planting native trees and restoring local ecosystems while building teamwork skills.\n\nBerlin, Germany\nHalf day • 12-50 people",
       image: productImage
     },
     {
       icon: Users2,
-      title: "Team Collaboration",
-      description: "Strengthen bonds through meaningful sustainable activities designed to boost engagement and productivity.",
+      title: "Ocean Cleanup Expedition",
+      description: "Combine marine conservation with team building through beach cleanups and water quality testing.\n\nHamburg, Germany\nFull day • 8-30 people",
       image: productImage
     },
     {
       icon: Leaf,
-      title: "Sustainability Goals",
-      description: "Set and achieve meaningful environmental targets while building a culture of responsibility and purpose.",
+      title: "Wildlife Habitat Building",
+      description: "Create homes for local wildlife while developing problem-solving and collaboration skills.\n\nMunich, Germany\nHalf day • 6-25 people",
       image: productImage
     }
   ];
@@ -66,7 +66,7 @@ const ProductSection = () => {
                   {feature.description}
                 </p>
                 <Button variant="outline" className="w-full">
-                  Learn More
+                  + Book Activity
                 </Button>
               </div>
             </div>
