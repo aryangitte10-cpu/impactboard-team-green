@@ -50,6 +50,13 @@ const Header = () => {
           >
             Contact
           </Button>
+          <Button 
+            variant="accent" 
+            size="sm"
+            className="ml-2"
+          >
+            Join as Coach
+          </Button>
         </nav>
       </div>
     </header>
