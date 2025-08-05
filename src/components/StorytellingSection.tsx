@@ -18,8 +18,8 @@ const StorytellingSection = () => {
             {/* Image */}
             <div className="animate-scale-in">
               <img 
-                src={environmentalImage} 
-                alt="Environmental impact visualization"
+                src="/lovable-uploads/b6f54bd4-c747-4a81-98ec-b30ca8d8c977.png" 
+                alt="Beautiful mountain lake landscape representing environmental stewardship"
                 className="w-full h-96 object-cover rounded-2xl shadow-card"
               />
             </div>
