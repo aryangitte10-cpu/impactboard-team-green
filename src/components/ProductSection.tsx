@@ -77,7 +77,7 @@ const ProductSection = () => {
                 <Button 
                   variant="outline" 
                   className="w-full"
-                  onClick={() => window.open('https://impactboard-next.vercel.app/', '_blank')}
+                  onClick={() => window.open('https://eventful-pathways.vercel.app/', '_blank')}
                 >
                   + Book Activity
                 </Button>

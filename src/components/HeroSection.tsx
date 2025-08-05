@@ -40,7 +40,7 @@ const HeroSection = () => {
             <Button 
               variant="hero" 
               size="xl"
-              onClick={() => window.open('https://impactboard-next.vercel.app/', '_blank')}
+              onClick={() => window.open('https://eventful-pathways.vercel.app/', '_blank')}
               className="group"
             >
               Get Started

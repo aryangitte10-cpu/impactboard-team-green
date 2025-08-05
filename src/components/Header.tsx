@@ -54,6 +54,7 @@ const Header = () => {
             variant="accent" 
             size="sm"
             className="ml-2"
+            onClick={() => scrollToSection('contact')}
           >
             Join as Coach
           </Button>
