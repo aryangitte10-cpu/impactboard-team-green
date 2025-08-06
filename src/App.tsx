@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
+import AdminUserSetup from "./components/AdminUserSetup";
 
 const queryClient = new QueryClient();
 
@@ -15,6 +16,7 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <AuthProvider>
       <TooltipProvider>
+        <AdminUserSetup />
         <Toaster />
         <Sonner />
         <BrowserRouter>
