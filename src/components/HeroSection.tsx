@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
-import AdminContentEditor from "@/components/AdminContentEditor";
 import { useContent } from "@/hooks/useContent";
 
 const HeroSection = () => {
@@ -29,19 +28,15 @@ const HeroSection = () => {
       <div className="container mx-auto px-6 py-20 relative z-10">
         <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
           {/* Main Tagline */}
-          <AdminContentEditor sectionKey="hero_title">
-            <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
-              {heroTitle?.title || 'Impactboard'}
-              <span className="block text-primary mt-2">By Givetastic</span>
-            </h1>
-          </AdminContentEditor>
+          <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
+            {heroTitle?.title || 'Impactboard'}
+            <span className="block text-primary mt-2">By Givetastic</span>
+          </h1>
           
           {/* Description */}
-          <AdminContentEditor sectionKey="hero_subtitle">
-            <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
-              {heroSubtitle?.content || 'Transform your team with sustainable activities that strengthen collaboration while making a positive environmental impact.'}
-            </p>
-          </AdminContentEditor>
+          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
+            {heroSubtitle?.content || 'Transform your team with sustainable activities that strengthen collaboration while making a positive environmental impact.'}
+          </p>
           
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

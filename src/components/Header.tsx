@@ -1,12 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { Leaf, User, LogOut } from "lucide-react";
+import { Leaf } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "@/hooks/useAuth";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
 const Header = () => {
   const navigate = useNavigate();
-  const { user, profile, signOut } = useAuth();
   
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -67,34 +64,6 @@ const Header = () => {
               Join as Coach
             </Button>
           </nav>
-          
-          {/* Auth Section */}
-          <div className="flex items-center">
-            {user ? (
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="outline" size="sm">
-                    <User className="h-4 w-4 mr-2" />
-                    {profile?.is_admin ? 'Admin' : 'User'}
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end">
-                  <DropdownMenuItem onClick={signOut}>
-                    <LogOut className="h-4 w-4 mr-2" />
-                    Sign Out
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            ) : (
-              <Button 
-                variant="outline" 
-                size="sm" 
-                onClick={() => navigate('/auth')}
-              >
-                Sign In
-              </Button>
-            )}
-          </div>
         </div>
       </div>
     </header>
