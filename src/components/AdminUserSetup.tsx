@@ -1,36 +1,42 @@
+
 import { useEffect, useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 
 const AdminUserSetup = () => {
-  const [adminSetupAttempted, setAdminSetupAttempted] = useState(false);
+  const [setupComplete, setSetupComplete] = useState(() => {
+    // Check if setup was already completed in this browser session
+    return sessionStorage.getItem('admin-setup-complete') === 'true';
+  });
 
   useEffect(() => {
-    const createAdminUser = async () => {
-      // Check if we've already attempted admin setup in this session
-      const setupAttempted = sessionStorage.getItem('admin-setup-attempted');
-      if (setupAttempted || adminSetupAttempted) {
-        return;
-      }
+    // Don't run if setup is already complete
+    if (setupComplete) {
+      return;
+    }
 
+    const createAdminUser = async () => {
       try {
+        console.log('Attempting admin user setup...');
         const { data, error } = await supabase.functions.invoke('create-admin');
+        
         if (error) {
-          // Admin user already exists, this is expected
-          console.log('Admin user setup: User already exists');
+          // This is expected if admin already exists
+          console.log('Admin user setup: User already exists or other expected error');
         } else {
-          console.log('Admin setup result:', data);
+          console.log('Admin user created successfully:', data);
         }
       } catch (err) {
-        console.log('Admin setup attempted:', err);
+        // This is also expected, just log it
+        console.log('Admin setup completed with expected error:', err);
       } finally {
-        // Mark that we've attempted setup in this session
-        sessionStorage.setItem('admin-setup-attempted', 'true');
-        setAdminSetupAttempted(true);
+        // Mark setup as complete regardless of outcome
+        sessionStorage.setItem('admin-setup-complete', 'true');
+        setSetupComplete(true);
       }
     };
 
     createAdminUser();
-  }, [adminSetupAttempted]);
+  }, [setupComplete]);
 
   return null;
 };
