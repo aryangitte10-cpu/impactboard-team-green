@@ -21,7 +21,7 @@ const HeroSection = () => {
         <img 
           src={heroImage} 
           alt="Sustainable team collaboration" 
-          className="w-full h-full object-cover opacity-25"
+          className="w-full h-full object-cover opacity-35"
         />
       </div>
       
