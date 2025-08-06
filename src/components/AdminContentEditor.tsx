@@ -32,6 +32,10 @@ const AdminContentEditor = ({ sectionKey, children, className }: AdminContentEdi
   const { profile } = useAuth();
   const { toast } = useToast();
 
+  // Debug logging
+  console.log('AdminContentEditor - Profile:', profile);
+  console.log('AdminContentEditor - Is Admin:', profile?.is_admin);
+
   // Don't show editor if not admin
   if (!profile?.is_admin) {
     return <div className={className}>{children}</div>;
