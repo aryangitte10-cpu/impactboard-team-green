@@ -1,9 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { Leaf } from "lucide-react";
+import { Leaf, User, LogOut } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "@/hooks/useAuth";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
 const Header = () => {
   const navigate = useNavigate();
+  const { user, profile, signOut } = useAuth();
   
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -26,45 +29,73 @@ const Header = () => {
           <span className="text-xl font-bold text-foreground">Givetastic</span>
         </div>
 
-        {/* Navigation */}
-        <nav className="hidden md:flex items-center gap-6">
-          <Button 
-            variant="ghost" 
-            onClick={() => navigate('/')}
-            className="hover:text-primary"
-          >
-            Home
-          </Button>
-          <Button 
-            variant="ghost" 
-            onClick={() => navigate('/about')}
-            className="hover:text-primary"
-          >
-            About
-          </Button>
-          <Button 
-            variant="ghost" 
-            onClick={() => scrollToSection('faq')}
-            className="hover:text-primary"
-          >
-            FAQ
-          </Button>
-          <Button 
-            variant="ghost" 
-            onClick={() => scrollToSection('contact')}
-            className="hover:text-primary"
-          >
-            Contact
-          </Button>
-          <Button 
-            variant="accent" 
-            size="sm"
-            className="ml-2"
-            onClick={() => scrollToSection('contact')}
-          >
-            Join as Coach
-          </Button>
-        </nav>
+        <div className="flex items-center gap-6">
+          {/* Navigation */}
+          <nav className="hidden md:flex items-center gap-6">
+            <Button 
+              variant="ghost" 
+              onClick={() => navigate('/')}
+              className="hover:text-primary"
+            >
+              Home
+            </Button>
+            <Button 
+              variant="ghost" 
+              onClick={() => navigate('/about')}
+              className="hover:text-primary"
+            >
+              About
+            </Button>
+            <Button 
+              variant="ghost" 
+              onClick={() => scrollToSection('faq')}
+              className="hover:text-primary"
+            >
+              FAQ
+            </Button>
+            <Button 
+              variant="ghost" 
+              onClick={() => scrollToSection('contact')}
+              className="hover:text-primary"
+            >
+              Contact
+            </Button>
+            <Button 
+              variant="default" 
+              onClick={() => scrollToSection('contact')}
+            >
+              Join as Coach
+            </Button>
+          </nav>
+          
+          {/* Auth Section */}
+          <div className="flex items-center">
+            {user ? (
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline" size="sm">
+                    <User className="h-4 w-4 mr-2" />
+                    {profile?.is_admin ? 'Admin' : 'User'}
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  <DropdownMenuItem onClick={signOut}>
+                    <LogOut className="h-4 w-4 mr-2" />
+                    Sign Out
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <Button 
+                variant="outline" 
+                size="sm" 
+                onClick={() => navigate('/auth')}
+              >
+                Sign In
+              </Button>
+            )}
+          </div>
+        </div>
       </div>
     </header>
   );
